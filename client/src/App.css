@@ -1,19 +1,31 @@
 /*Google Fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
-body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
-  background: rgba(225, 235, 253, 0.35);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-}
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
 :root {
   --lightFont: 300;
   --RegularFont: 400;
   --BoldFont: 700;
+  --BlackFont: 900;
   --mainWhite: #fffdfd;
   --PrimaryColor: #e1ebfd;
   --SecondaryColor: #a875fe;
   --Blue: #59b9ff;
   --GrayishBlue: #a6b6e3;
+}
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+.App {
+  overflow: hidden;
+  color: #242d49;
+  height: 100vh;
+}
+.blur {
+  position: absolute;
+  width: 22rem;
+  height: 14rem;
+  border-radius: 50%;
+  background-color: var(--SecondaryColor);
+  filter: blur(120px);
 }

@@ -1,0 +1,161 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: white;
+  height: 100%;
+  padding: 1rem 0;
+  gap: 20px;
+}
+img {
+  width: 2rem;
+  height: 100%;
+}
+.logoBox {
+  display: flex;
+  align-self: center;
+  gap: 10px;
+  align-items: center;
+}
+.logoBox > span {
+  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BoldFont);
+  color: var(--SecondaryColor);
+}
+.logoBox > div {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: -5px 4px 13px 0px rgb(195 195 195);
+  -moz-box-shadow: -5px 4px 13px 0px rgb(195 195 195);
+  box-shadow: -5px 4px 13px 0px rgb(195 195 195);
+  -webkit-transition: box-shadow 0.3s ease-out;
+  -moz-transition: box-shadow 0.3s ease-out;
+  -ms-transition: box-shadow 0.3s ease-out;
+  -o-transition: box-shadow 0.3s ease-out;
+  transition: box-shadow 0.3s ease-out;
+}
+.logoBox > div > svg {
+  width: 2rem;
+  height: 2rem;
+}
+.logoBox > div > svg > path {
+  fill: var(--SecondaryColor);
+}
+nav {
+  width: 100%;
+}
+.menuBox > span,
+.accountBox > span {
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BlackFont);
+  font-style: bold;
+  color: #242d49;
+  padding-left: 1rem;
+}
+
+.menuBox > ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.menuBox > ul > li {
+  padding: 0.7rem 0;
+  height: 1.4rem;
+}
+.menuBox > ul > li:hover {
+  -webkit-box-shadow: 0px 15px 10px -15px rgba(188, 188, 188, 1);
+  -moz-box-shadow: 0px 15px 10px -15px rgba(188, 188, 188, 1);
+  box-shadow: 0px 15px 10px -15px rgba(188, 188, 188, 1);
+  -webkit-transition: box-shadow 0.3s ease-out;
+  -moz-transition: box-shadow 0.3s ease-out;
+  -ms-transition: box-shadow 0.3s ease-out;
+  -o-transition: box-shadow 0.3s ease-out;
+  transition: box-shadow 0.3s ease-out;
+}
+.menuBox > ul > li > a:hover,
+.menuBox > ul > li > a > svg:hover {
+  color: black;
+  fill: var(--SecondaryColor);
+  -webkit-transition: box-shadow 0.3s ease-out;
+  -moz-transition: box-shadow 0.3s ease-out;
+  -ms-transition: box-shadow 0.3s ease-out;
+  -o-transition: box-shadow 0.3s ease-out;
+  transition: box-shadow 0.3s ease-out;
+}
+.menuBox > ul > li > a > svg:hover {
+  fill: var(--SecondaryColor);
+}
+.menuBox > ul > li > a {
+  text-decoration: none;
+  color: var(--GrayishBlue);
+  font-weight: var(--BoldFont);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding-left: 1.4rem;
+}
+.menuBox > ul > li > a > svg {
+  width: 1.5rem;
+  height: 1.3rem;
+}
+.accountBoxItem {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1.4rem;
+  margin: 1rem 0;
+}
+.accountBoxItem > img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center;
+}
+.accountBoxItem > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+}
+.accountBoxItem > div > :nth-child(1) {
+  font-weight: var(--BoldFont);
+  font-size: 1.2rem;
+}
+.accountBoxItem > div > :nth-child(2) {
+  font-weight: var(--RegularFont);
+  color: var(--GrayishBlue);
+  font-size: 0.9rem;
+}
+.adBox {
+  padding-left: 1rem;
+}
+
+.adBox > span {
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BlackFont);
+  font-style: bold;
+  color: #242d49;
+}
+
+.adBox > img {
+  object-fit: fill;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  margin: 1rem 0;
+}
