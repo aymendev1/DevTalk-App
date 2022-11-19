@@ -7,7 +7,7 @@
   --BoldFont: 700;
   --BlackFont: 900;
   --mainWhite: #fffdfd;
-  --PrimaryColor: #e1ebfd;
+  --PrimaryColor: #ebf2fb;
   --SecondaryColor: #a875fe;
   --Blue: #59b9ff;
   --GrayishBlue: #a6b6e3;
@@ -28,4 +28,18 @@ body {
   border-radius: 50%;
   background-color: var(--SecondaryColor);
   filter: blur(120px);
+}
+.btn-rounded {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-rounded:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+  cursor: pointer;
 }

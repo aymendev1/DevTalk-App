@@ -1,0 +1,92 @@
+.rightSidebar {
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border-left: 1px solid #2a2a2a2b;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  gap: 20px;
+}
+.headerRS {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+.SearchBox {
+  background-color: transparent;
+  border: 1.5px solid #2a2a2a73;
+  border-radius: 40px;
+  height: 50px;
+  padding: 0 20px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.SearchBox > input {
+  border: none;
+  outline: none;
+  height: 80%;
+  width: 70%;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: var(--BoldFont);
+}
+.SearchBox > input::placeholder {
+  font-weight: var(--BoldFont);
+  color: #2a2a2a73;
+}
+.SearchBox > svg {
+  height: 1.3em;
+  width: 1.4em;
+  fill: #2a2a2a73;
+}
+.NotificationBtn {
+  border: 1px solid #2a2a2a73;
+}
+.NotificationBtn > svg {
+  height: 1.3em;
+  width: 1.4em;
+  fill: #2a2a2a73;
+}
+.LogoutBtn {
+  border: none;
+  background: var(--Blue);
+}
+.LogoutBtn > svg {
+  height: 1.3em;
+  width: 1.4em;
+  fill: white;
+}
+.ProfileBox,
+.suggestionBox {
+  width: 100%;
+}
+.ProfileBox > span,
+.suggestionBox > span {
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BlackFont);
+  color: #242d49;
+  padding-left: 1rem;
+}
+.ProfileBox > :nth-child(2) {
+  margin: 1rem 0;
+  padding-left: 1rem;
+}
+.suggestionBoxItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
