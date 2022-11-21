@@ -147,3 +147,103 @@
   background-color: var(--SecondaryColor);
   cursor: pointer;
 }
+
+.FriendsCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.FriendsCard > img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--SecondaryColor);
+  padding: 3px;
+}
+.FriendsCard > span {
+  font-weight: var(--BoldFont);
+  font-size: 1rem;
+  color: #242d49;
+}
+
+.FeedCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 1rem;
+}
+.FeedCard > div:nth-of-type(1) > img {
+  height: 20rem;
+  width: 25rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
+  border: 3px solid white;
+}
+.FeedCard > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  width: 25rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.FeedPublisher {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.FeedPublisher > img {
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.FeedPublisher > span {
+  font-weight: var(--BoldFont);
+  font-size: 1rem;
+  color: #242d49;
+}
+.FeedStats {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.FeedStats > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+.FeedStats > div > button {
+  background: transparent;
+  border: none;
+}
+.FeedStats > div > button > svg {
+  height: 1.4rem;
+  width: 1.5rem;
+  color: var(--GrayishBlue);
+}
+.FeedStats > div > button > svg:hover {
+  cursor: pointer;
+}
+
+.FeedStats > div > span {
+  color: var(--GrayishBlue);
+  font-weight: var(--BoldFont);
+  font-size: 1rem;
+}
+.btnLike > svg {
+  color: rgb(221, 37, 37) !important;
+}

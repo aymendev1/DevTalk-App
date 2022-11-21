@@ -8,6 +8,7 @@
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(4px);
+  position: fixed;
 }
 img {
   width: 2rem;
@@ -51,6 +52,9 @@ img {
 nav {
   width: 100%;
 }
+.menuBox {
+  width: 100%;
+}
 .menuBox > span,
 .accountBox > span {
   font-size: 1.2rem;
@@ -73,10 +77,11 @@ nav {
   padding: 0.7rem 0;
   height: 1.4rem;
 }
-.menuBox > ul > li:hover {
-  -webkit-box-shadow: 0px 15px 10px -15px rgba(188, 188, 188, 1);
-  -moz-box-shadow: 0px 15px 10px -15px rgba(188, 188, 188, 1);
-  box-shadow: 0px 15px 10px -15px rgba(188, 188, 188, 1);
+.menuBox > ul > li:hover,
+.activeMenu {
+  -webkit-box-shadow: 0px 15px 20px -9px rgb(188 188 188);
+  -moz-box-shadow: 0px 15px 20px -9px rgb(188 188 188);
+  box-shadow: 0px 15px 20px -9px rgb(188 188 188);
   -webkit-transition: box-shadow 0.3s ease-out;
   -moz-transition: box-shadow 0.3s ease-out;
   -ms-transition: box-shadow 0.3s ease-out;
@@ -93,8 +98,14 @@ nav {
   -o-transition: box-shadow 0.3s ease-out;
   transition: box-shadow 0.3s ease-out;
 }
+.activeMenu > a {
+  color: black !important;
+}
+.activeMenu > a > svg {
+  color: var(--SecondaryColor);
+}
 .menuBox > ul > li > a > svg:hover {
-  fill: var(--SecondaryColor);
+  color: var(--SecondaryColor);
 }
 .menuBox > ul > li > a {
   text-decoration: none;
@@ -144,6 +155,10 @@ nav {
 }
 .adBox {
   padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .adBox > span {

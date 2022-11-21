@@ -19,7 +19,7 @@ body {
 .App {
   overflow: hidden;
   color: #242d49;
-  height: 100vh;
+  height: 100%;
 }
 .blur {
   position: absolute;

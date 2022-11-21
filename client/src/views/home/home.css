@@ -1,0 +1,69 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.3rem;
+}
+.headerItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #2a2a2a2b;
+}
+.Feed {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.1rem;
+}
+.FeedHeader {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.FeedHeader > span {
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BlackFont);
+  color: #242d49;
+  padding-left: 1rem;
+}
+.FeedHeader > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-weight: var(--BoldFont);
+  font-size: 0.9rem;
+  color: white;
+  background-color: var(--SecondaryColor);
+  border: 0;
+  width: 6rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.FeedHeader > button > svg {
+  color: white;
+  height: 10px;
+  width: 10px;
+}
+.FeedHeader > button:hover {
+  color: #242d49;
+  background-color: transparent;
+  border: 1px solid #2a2a2a2b;
+  cursor: pointer;
+}
+.FeedContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 2rem;
+  grid-row-gap: 0.6rem;
+  width: 100%;
+}

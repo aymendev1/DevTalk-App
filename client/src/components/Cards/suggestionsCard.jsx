@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function Card(props) {
   let btnContent = "Follow";
   let btnClass = "suggestionCardBtn";

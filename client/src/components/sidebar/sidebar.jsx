@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HiHome } from "react-icons/hi";
 import { AiFillMessage } from "react-icons/ai";
 import { RiUserFill, RiSettings5Fill } from "react-icons/ri";
@@ -9,6 +9,7 @@ import DefaultProfilePic from "../../assests/B-5285.jpg";
 import Ad from "../../assests/buymecoffeeAd.png";
 export default function Sidebar() {
   const DefaultUserName = "aymendev1";
+  const CurrentRoute = useLocation();
   const MenuNavItems = [
     {
       display: "Home",
@@ -45,8 +46,12 @@ export default function Sidebar() {
         <span>Menu</span>
         <ul>
           {MenuNavItems.map((item, index) => {
+            let ActiveTabClass;
+            if (CurrentRoute.pathname === item.to) {
+              ActiveTabClass = "activeMenu";
+            }
             return (
-              <li>
+              <li className={ActiveTabClass}>
                 <Link to={item.to} key={index}>
                   {item.icon}
                   {item.display}
