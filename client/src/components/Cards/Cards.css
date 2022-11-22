@@ -136,7 +136,8 @@
   border-radius: 10px;
 }
 .followed,
-.suggestionCardBtn:hover {
+.suggestionCardBtn:hover,
+.btnViewPost:hover {
   color: #242d49;
   background-color: transparent;
   border: 1px solid #2a2a2a2b;
@@ -177,19 +178,28 @@
   gap: 5px;
   padding: 1rem;
 }
+.FeedCard > div:nth-of-type(1) {
+  position: relative;
+}
+
 .FeedCard > div:nth-of-type(1) > img {
-  height: 20rem;
-  width: 25rem;
+  height: 15rem;
+  width: 20rem;
   object-fit: cover;
   object-position: center;
   border-radius: 25px;
   border: 3px solid white;
+  transition: 0.5s ease;
+}
+.FeedCard > div:nth-of-type(1):hover > img {
+  opacity: 0.3;
+  cursor: pointer;
 }
 .FeedCard > div:nth-of-type(2) {
   display: flex;
   flex-direction: row;
   align-items: space-between;
-  width: 25rem;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
@@ -246,4 +256,29 @@
 }
 .btnLike > svg {
   color: rgb(221, 37, 37) !important;
+}
+.FeedCardImage {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.FeedCard > div:nth-of-type(1):hover > .FeedCardImage {
+  opacity: 1;
+}
+.btnViewPost {
+  font-weight: var(--BoldFont);
+  font-size: 0.9rem;
+  color: white;
+  background-color: var(--SecondaryColor);
+  width: 7.1rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--SecondaryColor);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }

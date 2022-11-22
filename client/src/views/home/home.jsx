@@ -40,6 +40,7 @@ export default function Home() {
       postID: "1762DA",
       ProfilePicture: User4,
       Name: "Sarah Tancedi",
+      username: "defaultusername",
       PostContent: "Picnic Day",
       PostImage: Post1,
       Likes: 22,
@@ -54,6 +55,7 @@ export default function Home() {
       PostContent: "External Hard Drive is Life",
       PostImage: Post5,
       Likes: 32,
+      username: "defaultusername",
       comments: [{ Name: "Sarah Tancedi", Commentcontent: "Really Helpful" }],
     },
     {
@@ -62,6 +64,7 @@ export default function Home() {
       Name: "Mike Ross",
       PostContent: "Nature Day",
       PostImage: Post3,
+      username: "defaultusername",
       Likes: 764,
       comments: [
         { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
@@ -74,6 +77,7 @@ export default function Home() {
       PostContent: "Picnic Day",
       PostImage: Post1,
       Likes: 22,
+      username: "defaultusername",
       comments: [
         { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
       ],
@@ -84,6 +88,7 @@ export default function Home() {
       Name: "Sarah Tancedi",
       PostContent: "Picnic Day",
       PostImage: Post1,
+      username: "defaultusername",
       Likes: 22,
       comments: [
         { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
@@ -96,6 +101,7 @@ export default function Home() {
       PostContent: "Picnic Day",
       PostImage: Post1,
       Likes: 22,
+      username: "defaultusername",
       comments: [
         { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
       ],
@@ -107,6 +113,7 @@ export default function Home() {
       PostContent: "Picnic Day",
       PostImage: Post1,
       Likes: 22,
+      username: "defaultusername",
       comments: [
         { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
       ],
@@ -118,6 +125,7 @@ export default function Home() {
       PostContent: "Picnic Day",
       PostImage: Post1,
       Likes: 22,
+      username: "defaultusername",
       comments: [
         { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
       ],
@@ -137,22 +145,11 @@ export default function Home() {
       <section className="Feed">
         <div className="FeedHeader">
           <span>Feeds</span>
-          <button>
-            <MdOutlineAdd />
-            Create
-          </button>
+          <button>+ Create </button>
         </div>
         <div className="FeedContent">
           {FeedTest.map((feed) => {
-            return (
-              <FeedCard
-                image={feed.PostImage}
-                PublisherImg={feed.ProfilePicture}
-                PublisherName={feed.Name}
-                like={feed.Likes}
-                commentNum={feed.comments.length}
-              />
-            );
+            return <FeedCard data={feed} />;
           })}
         </div>
       </section>

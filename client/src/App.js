@@ -8,7 +8,7 @@ import Settings from "./views/Settings/settings";
 function App() {
   return (
     <div className="App">
-      <div className="blur" style={{ top: "18%", right: "36rem" }}></div>
+      <div className="blur" style={{ top: "-27%", right: "-2rem" }}></div>
       <div className="blur" style={{ top: "36%", left: "-8rem" }}></div>
       <BrowserRouter>
         <Routes>

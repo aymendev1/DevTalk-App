@@ -35,18 +35,14 @@
   padding-left: 1rem;
 }
 .FeedHeader > button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
   font-weight: var(--BoldFont);
   font-size: 0.9rem;
   color: white;
   background-color: var(--SecondaryColor);
-  border: 0;
   width: 6rem;
-  padding: 10px 15px;
+  padding: 0.6rem 0.7rem;
   border-radius: 10px;
+  border: 1px solid var(--SecondaryColor);
 }
 .FeedHeader > button > svg {
   color: white;
@@ -61,9 +57,9 @@
 }
 .FeedContent {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
-  grid-column-gap: 2rem;
+  grid-column-gap: 1.5rem;
   grid-row-gap: 0.6rem;
   width: 100%;
 }
