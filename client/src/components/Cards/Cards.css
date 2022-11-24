@@ -282,3 +282,60 @@
   align-items: center;
   gap: 6px;
 }
+.CommentCard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.CommentCard > div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.CommentCard > div:nth-child(1) > img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.CommentCard > div:nth-child(1) > span {
+  width: 100%;
+}
+.CommentCard > div:nth-child(1) > span > span {
+  font-size: 0.9rem;
+  font-weight: var(--BoldFont);
+  padding-right: 7px;
+}
+.CommentCard > div:nth-child(1) > button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.CommentCard > div:nth-child(1) > button > svg {
+  color: #242d49;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+.CommentCard > div:nth-child(1) > button:hover > svg {
+  color: rgb(221, 37, 37) !important;
+}
+.CommentCard > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-left: 2.5rem;
+}
+.CommentCard > div:nth-child(2) > span {
+  font-size: 0.7rem;
+  font-weight: var(--BoldFont);
+  color: #242d499a;
+}

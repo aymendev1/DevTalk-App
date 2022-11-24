@@ -4,22 +4,18 @@ import { Link } from "react-router-dom";
 import { RiHeart2Fill, RiSendPlaneFill } from "react-icons/ri";
 import { AiFillMessage } from "react-icons/ai";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
+import CommentCard from "../Cards/CommentCard";
 import "./popup.css";
 function ShowPost(props) {
   const data = props.data;
   const [isEmojieOpen, setisEmojieOpen] = React.useState(false);
-  const [chosenEmoji, setChosenEmoji] = React.useState(null);
   const [comment, setComment] = React.useState("");
-  const onEmojiClick = (event, emojiObject) => {
-    setChosenEmoji(emojiObject);
-    setChosenEmoji(comment + chosenEmoji.emoji);
-    console.log(chosenEmoji);
+  const onEmojiClick = (emojiObject, event) => {
+    setComment(comment + emojiObject.emoji);
   };
-  console.log(comment);
   function openEmojie() {
     isEmojieOpen ? setisEmojieOpen(false) : setisEmojieOpen(true);
   }
-  console.log(isEmojieOpen);
   return (
     <div className="ShowPostPopup">
       <div className="leftS_ShowPostPopup">
@@ -40,6 +36,9 @@ function ShowPost(props) {
             <span>{"@" + data.username}</span>
             {data.PostContent}
           </span>
+          {data.comments.map((comment) => {
+            return <CommentCard data={comment} />;
+          })}
         </div>
         {/*Like , Comment , Send */}
         <div>

@@ -1,6 +1,8 @@
 import React from "react";
 import FriendsCard from "../../components/Cards/FriendCard";
 import FeedCard from "../../components/Cards/FeedCard";
+import Popup from "../../components/Popups/popup";
+import CreatePost from "../../components/Popups/CreatePost";
 import User1 from "../../assests/face1.jpg";
 import User2 from "../../assests/face2.jpg";
 import User3 from "../../assests/face3.jpg";
@@ -13,7 +15,6 @@ import Post5 from "../../assests/post/post (5).jpg";
 import Post6 from "../../assests/post/post (6).jpg";
 import Post7 from "../../assests/post/post (7).jpg";
 import Post8 from "../../assests/post/post (8).jpg";
-import { MdOutlineAdd } from "react-icons/md";
 import "./home.css";
 export default function Home() {
   const FriendsData = [
@@ -40,23 +41,35 @@ export default function Home() {
       postID: "1762DA",
       ProfilePicture: User4,
       Name: "Sarah Tancedi",
-      username: "defaultusername",
-      PostContent: "Picnic Day",
+      username: "sarahtan_",
+      PostContent: "Picnic Day ",
       PostImage: Post1,
       Likes: 22,
       comments: [
-        { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
+        {
+          username: "sarahtan_",
+          ProfilePicture: User4,
+          comment: "What a view 🫣!!",
+          Likes: 1,
+        },
       ],
     },
     {
       postID: "1sdf2DA",
       ProfilePicture: User1,
       Name: "Arthur Shelby",
-      PostContent: "External Hard Drive is Life",
+      PostContent: "External Hard Drive is Life 😎",
       PostImage: Post5,
       Likes: 32,
-      username: "defaultusername",
-      comments: [{ Name: "Sarah Tancedi", Commentcontent: "Really Helpful" }],
+      username: "arthur.shel",
+      comments: [
+        {
+          username: "arthur.shel",
+          ProfilePicture: User1,
+          comment: "Really Helpful 👌",
+          Likes: 1,
+        },
+      ],
     },
     {
       postID: "1212DA",
@@ -64,10 +77,15 @@ export default function Home() {
       Name: "Mike Ross",
       PostContent: "Nature Day",
       PostImage: Post3,
-      username: "defaultusername",
+      username: "mike_rs",
       Likes: 764,
       comments: [
-        { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
       ],
     },
     {
@@ -79,7 +97,12 @@ export default function Home() {
       Likes: 22,
       username: "defaultusername",
       comments: [
-        { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
       ],
     },
     {
@@ -87,11 +110,64 @@ export default function Home() {
       ProfilePicture: User4,
       Name: "Sarah Tancedi",
       PostContent: "Picnic Day",
-      PostImage: Post1,
+      PostImage: Post2,
       username: "defaultusername",
       Likes: 22,
       comments: [
-        { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
+        {
+          username: "arthur.shel",
+          ProfilePicture: User1,
+          comment: "Really Helpful 👌",
+          Likes: 1,
+        },
+        {
+          username: "sarahtan_",
+          ProfilePicture: User4,
+          comment: "What a view 🫣!!",
+          Likes: 1,
+        },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
+        {
+          username: "arthur.shel",
+          ProfilePicture: User1,
+          comment: "Really Helpful 👌",
+          Likes: 1,
+        },
+        {
+          username: "sarahtan_",
+          ProfilePicture: User4,
+          comment: "What a view 🫣!!",
+          Likes: 1,
+        },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
       ],
     },
     {
@@ -99,11 +175,16 @@ export default function Home() {
       ProfilePicture: User4,
       Name: "Sarah Tancedi",
       PostContent: "Picnic Day",
-      PostImage: Post1,
+      PostImage: Post4,
       Likes: 22,
       username: "defaultusername",
       comments: [
-        { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
       ],
     },
     {
@@ -111,11 +192,16 @@ export default function Home() {
       ProfilePicture: User4,
       Name: "Sarah Tancedi",
       PostContent: "Picnic Day",
-      PostImage: Post1,
+      PostImage: Post6,
       Likes: 22,
       username: "defaultusername",
       comments: [
-        { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
       ],
     },
     {
@@ -123,14 +209,41 @@ export default function Home() {
       ProfilePicture: User4,
       Name: "Sarah Tancedi",
       PostContent: "Picnic Day",
-      PostImage: Post1,
+      PostImage: Post7,
       Likes: 22,
       username: "defaultusername",
       comments: [
-        { Name: "Sarah Tancedi", Commentcontent: "Really Like the view" },
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
+      ],
+    },
+    {
+      postID: "1762DA",
+      ProfilePicture: User2,
+      Name: "Sarah Tancedi",
+      PostContent: "Picnic Day",
+      PostImage: Post8,
+      Likes: 22,
+      username: "defaultusername",
+      comments: [
+        {
+          username: "mike_rs",
+          ProfilePicture: User2,
+          comment: "a nice idea for a weekend ",
+          Likes: 3,
+        },
       ],
     },
   ];
+  const [buttonTrigger, setButtonTrigger] = React.useState(false);
+
+  function openPopUp() {
+    buttonTrigger ? setButtonTrigger(false) : setButtonTrigger(true);
+  }
   return (
     <div className="mainPanel home">
       <header>
@@ -145,7 +258,10 @@ export default function Home() {
       <section className="Feed">
         <div className="FeedHeader">
           <span>Feeds</span>
-          <button>+ Create </button>
+          <button onClick={openPopUp}>+ Create </button>
+          <Popup trigger={buttonTrigger} setButtonTrigger={setButtonTrigger}>
+            <CreatePost />
+          </Popup>
         </div>
         <div className="FeedContent">
           {FeedTest.map((feed) => {

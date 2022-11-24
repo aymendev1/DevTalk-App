@@ -7,7 +7,6 @@ import ShowPost from "../Popups/ShowPost";
 export default function FeedCard(props) {
   const data = props.data;
   const [buttonTrigger, setButtonTrigger] = React.useState(false);
-  const [postIndex, setPostIndex] = React.useState(0);
 
   function openPopUp() {
     buttonTrigger ? setButtonTrigger(false) : setButtonTrigger(true);
