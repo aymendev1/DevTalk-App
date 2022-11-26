@@ -12,6 +12,7 @@
 }
 .mainPanel {
   grid-area: 1 / 2 / 2 / 3;
+  min-height: 100vh;
 }
 .rightSidebar {
   grid-area: 1 / 3 / 2 / 4;

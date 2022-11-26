@@ -34,6 +34,30 @@ export default function Home() {
       ProfilePicture: User3,
       Name: "Van Diesel",
     },
+    {
+      ProfilePicture: User4,
+      Name: "Sarah Tancedi",
+    },
+    {
+      ProfilePicture: User1,
+      Name: "Arthur Shelby",
+    },
+    {
+      ProfilePicture: User2,
+      Name: "Mike Ross",
+    },
+    {
+      ProfilePicture: User3,
+      Name: "Van Diesel",
+    },
+    {
+      ProfilePicture: User4,
+      Name: "Sarah Tancedi",
+    },
+    {
+      ProfilePicture: User1,
+      Name: "Arthur Shelby",
+    },
   ];
   // Testing Feed before uploading real data from database
   const FeedTest = [
@@ -244,10 +268,13 @@ export default function Home() {
   function openPopUp() {
     buttonTrigger ? setButtonTrigger(false) : setButtonTrigger(true);
   }
+  const handleScroll = (event) => {
+    console.log("scrollleft: ", event.currentTarget.scrollLeft);
+  };
   return (
     <div className="mainPanel home">
       <header>
-        <div className="headerItems">
+        <div className="headerItems" onScroll={handleScroll}>
           {FriendsData.map((friend) => {
             return (
               <FriendsCard img={friend.ProfilePicture} name={friend.Name} />

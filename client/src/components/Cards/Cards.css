@@ -339,3 +339,54 @@
   font-weight: var(--BoldFont);
   color: #242d499a;
 }
+/*--------------------------------------------*/
+.messagesCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  gap: 1rem;
+  padding: 1rem 19px;
+  border-radius: 10px;
+}
+.messagesCard > img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.messagesCard > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  height: 100%;
+  width: 100%;
+}
+.messagesCard > div > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.messagesCard > div > div > span:nth-child(1) {
+  font-weight: var(--BoldFont);
+  font-size: 1.2rem;
+  color: var(--mainWhite);
+}
+.messagesCard > div > div > span:nth-child(2) {
+  font-weight: var(--BoldFont);
+  font-size: 0.8rem;
+  color: var(--mainWhite);
+}
+.messagesCard > div > span {
+  font-size: 1rem;
+  color: var(--GrayishBlue);
+}
+.messagesCard:hover {
+  background-color: #3e4765;
+  cursor: pointer;
+}

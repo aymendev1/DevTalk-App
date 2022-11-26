@@ -1,0 +1,73 @@
+.messages {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.conversationMenu {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0 1rem 0 1rem;
+  background-color: #242d49;
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: unset;
+}
+.conversationMenu::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+.conversationMenu::-webkit-scrollbar-track {
+  background: #242d49;
+}
+
+/* Handle */
+.conversationMenu::-webkit-scrollbar-thumb {
+  background: #3e4765;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.conversationMenu::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.searchBar_conversationMenu {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  background-color: #3e4765;
+  height: 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+.searchBar_conversationMenu > svg {
+  color: white;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+.searchBar_conversationMenu > input {
+  background-color: transparent;
+  border: none;
+  width: 95%;
+  outline: none;
+}
+.searchBar_conversationMenu > input::placeholder {
+  color: white;
+  font-weight: var(--BoldFont);
+  font-size: 0.9rem;
+}
+.conversationMenu > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}

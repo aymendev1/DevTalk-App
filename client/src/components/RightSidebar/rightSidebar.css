@@ -3,17 +3,14 @@
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
   border-left: 1px solid #2a2a2a2b;
-  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 100%;
+  height: 100vh;
   gap: 20px;
+  position: sticky;
   top: 0;
-  bottom: 0;
-  position: fixed;
-  right: 0;
-  width: 20%;
+  width: 99%;
 }
 
 .headerRS {
@@ -23,6 +20,7 @@
   justify-content: space-around;
   align-items: center;
   gap: 20px;
+  margin-top: 1rem;
 }
 .SearchBox {
   background-color: transparent;
