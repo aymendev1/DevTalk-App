@@ -265,10 +265,84 @@ const Messages = [
       {
         content: "i get it , thanks !",
         time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
       },
       {
         content: "Why not ?",
         time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "Why not , we can gop to the same address as always 👍😊",
+        time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "Why not , we can gop to the same address as always 👍😊",
+        time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
       },
     ],
   },
@@ -280,6 +354,17 @@ const Messages = [
       {
         content: "What Are you up tonight ?",
         time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
       },
     ],
   },
@@ -290,6 +375,17 @@ const Messages = [
       {
         content: "Why not ?",
         time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
       },
     ],
   },
@@ -301,10 +397,32 @@ const Messages = [
       {
         content: "i get it , thanks !",
         time: "12:56pm",
+        type: "received",
       },
       {
         content: "Why not ?",
         time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
+      },
+      {
+        content: "i get it , thanks !",
+        time: "12:56pm",
+        type: "received",
+      },
+      {
+        content: "Why not ?",
+        time: "12:56pm",
+        type: "sent",
       },
     ],
   },
