@@ -35,11 +35,12 @@ function App() {
               element={
                 <>
                   <Profile />
+                  <RSidebar />
                 </>
               }
             />
             <Route
-              path="settings"
+              path="settings/*"
               element={
                 <>
                   <Settings /> <RSidebar />

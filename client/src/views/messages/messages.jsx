@@ -38,7 +38,9 @@ export default function MessagesView() {
       </div>
 
       {!selectedConversation ? (
-        ""
+        <div className="conversation" style={{ justifyContent: "center" }}>
+          <span>Select a conversation and start chatting </span>
+        </div>
       ) : (
         <div className="conversation">
           {" "}

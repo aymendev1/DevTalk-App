@@ -1,0 +1,50 @@
+.DetailsSettings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: fit-content;
+}
+.DetailsSettings > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+.DetailsSettings > div > span {
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--RegularFont);
+  color: #242d49;
+}
+.DetailsSettings > div > input {
+  background-color: transparent;
+  width: 20rem;
+  padding: 10px 10px 10px 0;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BoldFont);
+  color: #242d49;
+  border: none;
+  border-bottom: 1px solid #242d49;
+  outline: none;
+}
+.DetailsSettings > div > input::placeholder {
+  font-weight: var(--RegularFont);
+  color: #242d4980;
+}
+.DetailsSettings > button {
+  font-weight: var(--BoldFont);
+  font-size: 0.9rem;
+  color: white;
+  background-color: var(--SecondaryColor);
+  border: 0;
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 1rem 0;
+}
