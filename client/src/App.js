@@ -6,6 +6,9 @@ import Home from "./views/home/home";
 import Messages from "./views/messages/messages";
 import Profile from "./views/profile/profile";
 import Settings from "./views/Settings/settings";
+import Login from "./views/Auth/Login";
+import Register from "./views/Auth/Register";
+import ForgotPass from "./views/Auth/ForgotPass";
 function App() {
   return (
     <div className="App">
@@ -48,6 +51,9 @@ function App() {
               }
             />
           </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/passwordreset" element={<ForgotPass />} />
         </Routes>
       </BrowserRouter>
     </div>

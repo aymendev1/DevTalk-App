@@ -271,6 +271,7 @@ export default function Home() {
   const handleScroll = (event) => {
     console.log("scrollleft: ", event.currentTarget.scrollLeft);
   };
+
   return (
     <div className="mainPanel home">
       <header>

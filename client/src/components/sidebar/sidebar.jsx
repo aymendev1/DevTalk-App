@@ -32,6 +32,25 @@ export default function Sidebar() {
       to: "/settings",
     },
   ];
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+  const [windowSize, setWindowSize] = React.useState(getWindowSize());
+  console.log(windowSize);
+
+  React.useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
   return (
     <div className="sidebar">
       <div className="logoBox">
