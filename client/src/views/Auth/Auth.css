@@ -1,0 +1,128 @@
+.auth {
+  background-image: url("../../assests/authBackground.jpg");
+  object-fit: cover;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.auth > div:nth-of-type(1) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--mainWhite);
+}
+.auth > div:nth-of-type(1) > svg {
+  width: 2rem;
+  height: 2rem;
+}
+.auth > div:nth-of-type(1) > svg > path {
+  fill: var(--mainWhite);
+}
+.auth > div:nth-of-type(1) > span {
+  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BoldFont);
+}
+.auth > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+  height: fit-content;
+  width: 20rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  padding: 2rem;
+}
+.auth > div:nth-of-type(2) > span:nth-of-type(1) {
+  justify-self: flex-start;
+  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BoldFont);
+}
+.auth > div:nth-of-type(2) > div {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.5rem;
+}
+.auth > div:nth-of-type(2) > div:focus-within {
+  border: 2px solid var(--SecondaryColor);
+}
+.auth > div:nth-of-type(2) > div > svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.auth > div:nth-of-type(2) > div > input {
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  width: 98%;
+  font-size: 1rem;
+}
+.auth > div:nth-of-type(2) > div > input::placeholder {
+  color: rgba(255, 255, 255, 0.507);
+}
+.auth > div:nth-of-type(2) > button {
+  width: 96%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.5rem;
+  background-color: white;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: var(--BoldFont);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.auth > div:nth-of-type(2) > button > svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.auth > div:nth-of-type(2) > button:hover {
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+.auth > div:nth-of-type(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+.auth > div:nth-of-type(3) > a,
+.auth > div:nth-of-type(3) > span > a {
+  color: white;
+  text-decoration: none;
+  font-weight: var(--BoldFont);
+}
+.auth > div:nth-of-type(2) > svg {
+  width: 9rem;
+  height: 6rem;
+  align-self: center;
+}
+.blur {
+  display: none;
+}
