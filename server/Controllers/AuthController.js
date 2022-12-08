@@ -32,3 +32,10 @@ export const registerUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+export const loginUser = async (req, res, next) => {
+  console.log;
+  UserModel.findById(req.user._id).then((user) => {
+    res.statusCode = 200;
+    res.send({ Message: "loggedin", user: user });
+  });
+};

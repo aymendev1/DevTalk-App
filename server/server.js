@@ -6,6 +6,8 @@ import passport from "passport";
 import * as localStrategy from "./middleware/passportLocal.js";
 import session from "express-session";
 import AuthRoute from "./Routes/Auth.js";
+import UserRoute from "./Routes/User.js";
+
 //Routes
 const app = express();
 
@@ -34,5 +36,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
 // Usage of Route
 app.use("/auth", AuthRoute);
+app.use("/user", UserRoute);
