@@ -7,6 +7,7 @@ import * as localStrategy from "./middleware/passportLocal.js";
 import session from "express-session";
 import AuthRoute from "./Routes/Auth.js";
 import UserRoute from "./Routes/User.js";
+import PostRoute from "./Routes/Post.js";
 
 //Routes
 const app = express();
@@ -40,3 +41,4 @@ mongoose
 // Usage of Route
 app.use("/auth", AuthRoute);
 app.use("/user", UserRoute);
+app.use("/post", PostRoute);
