@@ -10,8 +10,8 @@ const PostSchema = mongoose.Schema(
     image: String,
     comments: {
       _id: { type: mongoose.Schema.Types.ObjectId },
-      userID: { type: String, required: true },
-      content: { type: String, required: true },
+      userID: { type: String },
+      content: { type: String },
     },
   },
   { timestamps: true }
