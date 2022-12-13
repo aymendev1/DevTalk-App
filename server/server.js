@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import cors from "cors";
 import * as dotenv from "dotenv";
 import passport from "passport";
 import * as localStrategy from "./middleware/passportLocal.js";
@@ -14,9 +15,11 @@ const app = express();
 
 //Middleware
 dotenv.config({ path: "./config/.env" });
+
 app.use(passport.initialize());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(cors());
 app.use(
   session({
     secret: process.env.SESSION_SECRET,

@@ -1,15 +1,20 @@
+import React from "react";
 import { MdMail } from "react-icons/md";
 import "./Auth.css";
 import { ReactComponent as Logo } from "../../assests/logo.svg";
 import { ReactComponent as MailBox } from "../../assests/mailbox.svg";
 export default function ForgotPass() {
+  const [email, setEmail] = React.useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="auth">
       <div>
         <Logo className="mailBox" />
         <span> DEV TALK</span>
       </div>
-      <div>
+      <form onSubmit={handleSubmit}>
         <MailBox />
         <span>Forgot password?</span>
         <span>
@@ -18,10 +23,15 @@ export default function ForgotPass() {
         </span>
         <div>
           <MdMail />
-          <input type="email" placeholder="example@email.com" />
+          <input
+            type="email"
+            placeholder="example@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-        <button>Send Reset instructions</button>
-      </div>
+        <button type="submit">Send Reset instructions</button>
+      </form>
     </div>
   );
 }

@@ -1,33 +1,77 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { MdMail, MdVpnKey } from "react-icons/md";
 import { FaUserCircle, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./Auth.css";
+import { Register } from "../../actions/Auth";
 import { ReactComponent as Logo } from "../../assests/logo.svg";
-function Register() {
+function RegisterAuth() {
+  const dispatch = useDispatch();
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
+  const handleSAubmit = (e) => {
+    e.preventDefault();
+    if (confirmPassword !== password) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password doesn't match, please try again !",
+      });
+    } else {
+      dispatch(Register([{ name: name, email: email, password: password }]));
+    }
+  };
   return (
     <div className="auth">
       <div>
         <Logo />
         <span> DEV TALK</span>
       </div>
-      <div>
+      <form onSubmit={handleSAubmit}>
         <span>Create an account</span>
         <span>Created for developers to developers by developers</span>
         <div>
           <FaUserCircle />
-          <input type="text" placeholder="Your username here ..." />
+          <input
+            type="text"
+            placeholder="Your full name here ..."
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div>
           <MdMail />
-          <input type="email" placeholder="example@email.com" />
+          <input
+            type="email"
+            placeholder="example@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div>
           <MdVpnKey />
-          <input type="password" placeholder="Your lil secret here ..." />
+          <input
+            type="password"
+            placeholder="Your lil secret here ..."
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
-        <button>Create An Account</button>
+        <div>
+          <MdVpnKey />
+          <input
+            type="password"
+            placeholder="Confirm your lil secret here ..."
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">Create An Account</button>
         <button>
           <FcGoogle />
           Sign up with Google
@@ -36,7 +80,7 @@ function Register() {
           <FaGithub />
           Sign up with Github
         </button>
-      </div>
+      </form>
       <div>
         <span>
           Already have an account? <Link to="/login"> Login</Link>{" "}
@@ -46,4 +90,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default RegisterAuth;
