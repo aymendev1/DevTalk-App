@@ -19,7 +19,7 @@ dotenv.config({ path: "./config/.env" });
 app.use(passport.initialize());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,

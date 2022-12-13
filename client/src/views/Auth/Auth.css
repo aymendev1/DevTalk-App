@@ -30,7 +30,8 @@
   font-family: "Lato", sans-serif;
   font-weight: var(--BoldFont);
 }
-.auth > form {
+.auth > form,
+.auth > .loaderContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -45,6 +46,9 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: white;
   padding: 2rem;
+}
+.auth > .loaderContainer {
+  align-items: center;
 }
 .auth > form > span:nth-of-type(1) {
   justify-self: flex-start;
@@ -112,11 +116,12 @@
   gap: 10px;
   color: white;
 }
-.auth > div:nth-of-type(3) > a,
-.auth > div:nth-of-type(3) > span > a {
+.auth > div:nth-of-type(2) > a,
+.auth > div:nth-of-type(2) > span,
+.auth > div:nth-of-type(2) > span > a {
   color: white;
   text-decoration: none;
-  font-weight: var(--BoldFont);
+  font-weight: var(--RegularFont);
 }
 .auth > form > svg {
   width: 9rem;
