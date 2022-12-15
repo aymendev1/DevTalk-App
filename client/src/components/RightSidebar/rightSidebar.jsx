@@ -64,6 +64,7 @@ export default function RightSidebar() {
                 name={user.Name}
                 username={user.username}
                 isFollowed={user.isFollowed}
+                key={index}
               />
             );
           })}

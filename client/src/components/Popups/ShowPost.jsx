@@ -8,6 +8,7 @@ import CommentCard from "../Cards/CommentCard";
 import "./popup.css";
 function ShowPost(props) {
   const data = props.data;
+  const userData = props.userData;
   const [isEmojieOpen, setisEmojieOpen] = React.useState(false);
   const [comment, setComment] = React.useState("");
   const onEmojiClick = (emojiObject, event) => {
@@ -19,26 +20,28 @@ function ShowPost(props) {
   return (
     <div className="ShowPostPopup">
       <div className="leftS_ShowPostPopup">
-        <img src={data.PostImage} alt="" />
+        <img src={data.image} alt="" />
       </div>
       <div className="rightS_ShowPostPopup">
         <div>
           {/* Header */}
           <div>
-            <img src={data.ProfilePicture} alt="" />
-            <span>{data.Name}</span>
+            <img src={userData.ProfilePicture || ""} alt="" />
+            <span>{userData.fullName}</span>
           </div>
-          <Link to={data.name}>View profile</Link>
+          <Link to={userData.fullName}>View profile</Link>
         </div>
         {/* Post Bio and comments*/}
         <div>
           <span>
             <span>{"@" + data.username}</span>
-            {data.PostContent}
+            {data.content}
           </span>
-          {data.comments.map((comment) => {
-            return <CommentCard data={comment} />;
-          })}
+          {data.comments
+            ? data.comments.map((comment) => {
+                return <CommentCard data={comment} />;
+              })
+            : null}
         </div>
         {/*Like , Comment , Send */}
         <div>
@@ -47,7 +50,7 @@ function ShowPost(props) {
             <AiFillMessage />
             <RiSendPlaneFill />
           </div>
-          <span>{data.Likes} likes </span>
+          <span>{data.likes.length} likes </span>
           <span>22 November 2022 </span>
         </div>
         {/*Post Comment*/}

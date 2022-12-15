@@ -70,7 +70,7 @@ export default function Sidebar() {
               ActiveTabClass = "activeMenu";
             }
             return (
-              <li className={ActiveTabClass}>
+              <li className={ActiveTabClass} key={index}>
                 <Link to={item.to} key={index}>
                   {item.icon}
                   {item.display}

@@ -3,6 +3,8 @@ import FriendsCard from "../../components/Cards/FriendCard";
 import FeedCard from "../../components/Cards/FeedCard";
 import Popup from "../../components/Popups/popup";
 import CreatePost from "../../components/Popups/CreatePost";
+import { useDispatch, useSelector } from "react-redux";
+import { getTimelinePosts } from "../../actions/Post";
 import User1 from "../../assests/face1.jpg";
 import User2 from "../../assests/face2.jpg";
 import User3 from "../../assests/face3.jpg";
@@ -17,6 +19,11 @@ import Post7 from "../../assests/post/post (7).jpg";
 import Post8 from "../../assests/post/post (8).jpg";
 import "./home.css";
 export default function Home() {
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.authReducer.authData);
+
+  const { posts, uploading } = useSelector((state) => state.postReducer);
+  console.log(posts);
   const FriendsData = [
     {
       ProfilePicture: User4,
@@ -271,14 +278,20 @@ export default function Home() {
   const handleScroll = (event) => {
     console.log("scrollleft: ", event.currentTarget.scrollLeft);
   };
-
+  React.useEffect(() => {
+    dispatch(getTimelinePosts(user._id));
+  }, []);
   return (
     <div className="mainPanel home">
       <header>
         <div className="headerItems" onScroll={handleScroll}>
-          {FriendsData.map((friend) => {
+          {FriendsData.map((friend, index) => {
             return (
-              <FriendsCard img={friend.ProfilePicture} name={friend.Name} />
+              <FriendsCard
+                key={index}
+                img={friend.ProfilePicture}
+                name={friend.Name}
+              />
             );
           })}
         </div>
@@ -292,8 +305,8 @@ export default function Home() {
           </Popup>
         </div>
         <div className="FeedContent">
-          {FeedTest.map((feed) => {
-            return <FeedCard data={feed} />;
+          {posts.map((feed, index) => {
+            return <FeedCard data={feed} userData={user} key={index} />;
           })}
         </div>
       </section>

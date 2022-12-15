@@ -48,6 +48,9 @@
 .leftS_CreatePostPopup {
   width: 60%;
 }
+.leftS_ShowPostPopup > div > {
+  height: 100%;
+}
 .leftS_ShowPostPopup > img {
   width: 100%;
   height: 100%;
@@ -229,6 +232,7 @@
 }
 .leftS_CreatePostPopup > div {
   position: relative;
+  height: 100%;
 }
 .leftS_CreatePostPopup > div > img {
   width: 100%;

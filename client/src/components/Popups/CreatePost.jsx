@@ -4,51 +4,82 @@ import { FileUploader } from "react-drag-drop-files";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { FiShare } from "react-icons/fi";
 import { BsFillTrashFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { convertToBase64 } from "../../hooks/convertToBase64";
+import { uploadPost } from "../../actions/Post";
+import { ThreeDots } from "react-loader-spinner";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 import "./popup.css";
 function CreatePost() {
-  const [file, setFile] = React.useState(null);
-  const [postContent, setpostContent] = React.useState(null);
+  const [postContent, setPostContent] = React.useState(null);
   const [isEmojieOpen, setisEmojieOpen] = React.useState(false);
-  const [imageContent, setimageContent] = React.useState(null);
-  const [preview, setPreview] = React.useState();
+  const [imageContent, setImageContent] = React.useState(null);
+  const { user } = useSelector((state) => state.authReducer.authData);
+  const dispatch = useDispatch();
+  const uploading = useSelector((state) => state.postReducer.uploading);
   const fileTypes = ["JPG", "PNG", "WEBP"];
-  const handleChange = (file) => {
-    setFile(file);
+  const [showAlert, setshowAlert] = React.useState(false);
+  const handleChange = async (file) => {
+    setImageContent(await convertToBase64(file));
   };
   const onEmojiClick = (emojiObject, event) => {
-    setpostContent(postContent + emojiObject.emoji);
+    setPostContent(postContent + emojiObject.emoji);
   };
   function openEmojie() {
     isEmojieOpen ? setisEmojieOpen(false) : setisEmojieOpen(true);
   }
-  function previewImage(file) {
-    setimageContent(file);
-  }
   function DeleteImage() {
-    setPreview();
-    setFile(null);
-    setimageContent(null);
+    setImageContent(null);
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newPost = {
+      userID: user._id,
+      content: postContent,
+      image: imageContent,
+    };
+    dispatch(uploadPost(newPost));
+    setshowAlert(true);
+    setPostContent(null);
+    setImageContent(null);
+    setTimeout(() => setshowAlert(false), 3000);
+  };
   // create a preview as a side effect, whenever selected file is changed
-  React.useEffect(() => {
-    if (!imageContent) {
-      setPreview(undefined);
-      return;
-    }
 
-    const objectUrl = URL.createObjectURL(imageContent);
-    setPreview(objectUrl);
-
-    // free memory when ever this component is unmounted
-    return () => URL.revokeObjectURL(objectUrl);
-  }, [imageContent]);
-
-  return (
+  return uploading ? (
+    <div>
+      <ThreeDots
+        height="80"
+        width="80"
+        radius="9"
+        color="#a875fe"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+      />
+    </div>
+  ) : (
     <div className="CreatePostPopup">
+      {showAlert ? (
+        <Alert
+          variant="filled"
+          severity="success"
+          style={{
+            width: "fit-content",
+            left: "1%",
+            position: "absolute",
+            top: "2%",
+          }}
+        >
+          Post published successfully
+        </Alert>
+      ) : null}
       <div className="leftS_CreatePostPopup">
         {imageContent ? (
           <div>
-            <img src={preview} alt="" />
+            <img src={imageContent} alt="" />
             <button title="Remove Picture" onClick={DeleteImage}>
               <BsFillTrashFill />
             </button>
@@ -61,8 +92,6 @@ function CreatePost() {
             label=""
             hoverTitle="Drop Here"
             classes="FileUploader"
-            onDrop={previewImage}
-            onSelect={previewImage}
           />
         )}
       </div>
@@ -85,15 +114,16 @@ function CreatePost() {
             <MdOutlineEmojiEmotions />
           </button>
         </div>
-        <form action="">
+        <form>
           <textarea
             name="comment"
             id=""
             placeholder="What are you thinking about ? ..."
             value={postContent}
-            onChange={(e) => setpostContent(e.target.value)}
+            onChange={(e) => setPostContent(e.target.value)}
+            required
           />
-          <button>
+          <button onClick={handleSubmit}>
             <FiShare />
             Share
           </button>
