@@ -189,10 +189,11 @@ export const getTimeSlapsPost = async (req, res) => {
       currentUserPosts
         .concat(...followingPosts[0].followingPosts)
         .sort((a, b) => {
-          return b - createdAt - a.createdAt;
+          return b.createdAt - a.createdAt;
         })
     );
   } catch (error) {
-    res.status(500).json({ status: false, error });
+    console.log(error);
+    res.status(500).json({ error });
   }
 };

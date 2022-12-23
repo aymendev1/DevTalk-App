@@ -9,7 +9,6 @@ import { convertToBase64 } from "../../hooks/convertToBase64";
 import { uploadPost } from "../../actions/Post";
 import { ThreeDots } from "react-loader-spinner";
 import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
 import "./popup.css";
 function CreatePost() {
   const [postContent, setPostContent] = React.useState(null);

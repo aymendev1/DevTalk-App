@@ -23,6 +23,6 @@ router.put("/:postID/comment", commentPost);
 router.delete("/:postID/comment", deleteCommentPost);
 
 // get Posts
-router.get("/:id/timeline", getTimeSlapsPost);
+router.get("/all/:id/timeline", getTimeSlapsPost);
 
 export default router;

@@ -9,14 +9,3 @@ export const uploadPost = (newPost) => async (dispatch) => {
     console.log(error);
   }
 };
-
-export const getTimelinePosts = (userID) => async (dispatch) => {
-  dispatch({ type: "GET_TIMELINE_POST_START " });
-  try {
-    const { data } = await PostAPI.getTimelinePosts(userID);
-    dispatch({ type: "GET_TIMELINE_POST_SUCCESS ", data: data });
-  } catch (error) {
-    dispatch({ type: "GET_TIMELINE_POST_FAIL" });
-    console.log(error);
-  }
-};

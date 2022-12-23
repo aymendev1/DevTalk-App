@@ -32,8 +32,8 @@ function Login() {
           <div>
             <MdMail />
             <input
-              type="email"
-              placeholder="example@email.com"
+              type="text"
+              placeholder="example@email.com or username"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);

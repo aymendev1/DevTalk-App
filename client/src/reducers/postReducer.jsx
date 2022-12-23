@@ -7,15 +7,26 @@ export const postReducer = (
       return { ...state, uploading: true, error: false };
     case "POST_SUCCESS":
       // We store the data on local storage
-      console.log(action.data);
       return {
         ...state,
-        posts: [...state.posts, action.data],
+        posts: [action.data, ...state.posts],
         uploading: false,
         error: false,
       };
     case "POST_FAILURE":
       return { ...state, uploading: false, error: true };
+    // belongs to Posts.jsx
+    case "UPLOAD_START":
+      return { ...state, loading: true, error: false };
+    case "UPLOAD_SUCCESS":
+      return {
+        ...state,
+        posts: action.data,
+        loading: false,
+        error: false,
+      };
+    case "UPLOAD_FAIL":
+      return { ...state, loading: false, error: true };
     default:
       return state;
   }

@@ -83,10 +83,11 @@
   font-size: 1rem;
   color: var(--GrayishBlue);
 }
-.ProfileCardData > :nth-child(3) > span {
+.ProfileCardData > :nth-child(3) > a {
   color: var(--SecondaryColor);
   font-weight: var(--BoldFont);
   font-size: 1.1rem;
+  text-decoration: none;
 }
 .ProfileCardData > :nth-child(3) {
   padding-bottom: 1rem;

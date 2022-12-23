@@ -10,7 +10,7 @@ function CommentCard(props) {
         <img src={comment.ProfilePicture} alt="" />
         <span>
           <span>{comment.username}</span>
-          {comment.comment}
+          {comment.content}
         </span>
         <button>
           <RiHeart2Line />
@@ -18,7 +18,6 @@ function CommentCard(props) {
       </div>
       {/* Stats  */}
       <div>
-        <span>{comment.Likes} likes</span>
         <span>{comment.date || "15 November 2022"}</span>
       </div>
     </div>

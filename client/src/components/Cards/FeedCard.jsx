@@ -4,14 +4,24 @@ import { AiFillMessage } from "react-icons/ai";
 import { FaEye } from "react-icons/fa";
 import Popup from "../Popups/popup";
 import ShowPost from "../Popups/ShowPost";
+import { getUser } from "../../api/userRequest";
 export default function FeedCard(props) {
   const data = props.data;
   const userData = props.userData;
   const [buttonTrigger, setButtonTrigger] = React.useState(false);
+  const [PublisherData, setPublisherData] = React.useState();
 
   function openPopUp() {
     buttonTrigger ? setButtonTrigger(false) : setButtonTrigger(true);
   }
+
+  async function getPublisherData() {
+    const res = await getUser(data.userID);
+    setPublisherData(res.data);
+  }
+  React.useEffect(() => {
+    getPublisherData();
+  }, []);
   return (
     <div className="FeedCard">
       <div>
@@ -24,8 +34,8 @@ export default function FeedCard(props) {
       </div>
       <div>
         <div className="FeedPublisher">
-          <img src={userData.ProfilePicture || ""} alt="" />
-          <span>{userData.fullName}</span>
+          <img src={PublisherData ? PublisherData.profilePicture : ""} alt="" />
+          <span>{PublisherData ? PublisherData.fullName : ""}</span>
         </div>
         <div className="FeedStats">
           <div className="Like">
@@ -43,7 +53,11 @@ export default function FeedCard(props) {
         </div>
       </div>
       <Popup trigger={buttonTrigger} setButtonTrigger={setButtonTrigger}>
-        <ShowPost data={data} userData={userData} />
+        <ShowPost
+          data={data}
+          userData={userData}
+          PublisherData={PublisherData}
+        />
       </Popup>
     </div>
   );

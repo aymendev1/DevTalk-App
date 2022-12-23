@@ -5,18 +5,28 @@ import { RiHeart2Fill, RiSendPlaneFill } from "react-icons/ri";
 import { AiFillMessage } from "react-icons/ai";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import CommentCard from "../Cards/CommentCard";
+import { LikePost } from "../../api/PostRequest";
+
 import "./popup.css";
 function ShowPost(props) {
-  const data = props.data;
-  const userData = props.userData;
+  const { data, userData, PublisherData } = props;
   const [isEmojieOpen, setisEmojieOpen] = React.useState(false);
   const [comment, setComment] = React.useState("");
+  const [isLiked, setLiked] = React.useState(data.likes.includes(userData._id));
+  const [Likes, setLikes] = React.useState(data.likes.length);
+
   const onEmojiClick = (emojiObject, event) => {
     setComment(comment + emojiObject.emoji);
   };
   function openEmojie() {
     isEmojieOpen ? setisEmojieOpen(false) : setisEmojieOpen(true);
   }
+  function handleLikes() {
+    setLiked((prev) => !prev);
+    LikePost(data._id, userData._id);
+    isLiked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
+  }
+
   return (
     <div className="ShowPostPopup">
       <div className="leftS_ShowPostPopup">
@@ -26,15 +36,22 @@ function ShowPost(props) {
         <div>
           {/* Header */}
           <div>
-            <img src={userData.ProfilePicture || ""} alt="" />
-            <span>{userData.fullName}</span>
+            <img
+              src={
+                PublisherData.profilePicture ? PublisherData.profilePicture : ""
+              }
+              alt=""
+            />
+            <span>{PublisherData.fullName ? PublisherData.fullName : ""}</span>
           </div>
-          <Link to={userData.fullName}>View profile</Link>
+          <Link to={PublisherData.fullName ? PublisherData.fullName : ""}>
+            View profile
+          </Link>
         </div>
         {/* Post Bio and comments*/}
         <div>
           <span>
-            <span>{"@" + data.username}</span>
+            <span>@{PublisherData.username ? PublisherData.username : ""}</span>
             {data.content}
           </span>
           {data.comments
@@ -46,12 +63,29 @@ function ShowPost(props) {
         {/*Like , Comment , Send */}
         <div>
           <div>
-            <RiHeart2Fill />
+            {isLiked ? (
+              <RiHeart2Fill
+                style={{ color: "#ff0000", cursor: "pointer" }}
+                onClick={handleLikes}
+              />
+            ) : (
+              <RiHeart2Fill
+                style={{ cursor: "pointer" }}
+                onClick={handleLikes}
+              />
+            )}
+
             <AiFillMessage />
             <RiSendPlaneFill />
           </div>
-          <span>{data.likes.length} likes </span>
-          <span>22 November 2022 </span>
+          <span>{Likes} likes </span>
+          <span>
+            {new Date(data.createdAt).toLocaleString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
         </div>
         {/*Post Comment*/}
         <div>
