@@ -256,9 +256,7 @@
   font-weight: var(--BoldFont);
   font-size: 1rem;
 }
-.btnLike > svg {
-  color: rgb(221, 37, 37) !important;
-}
+
 .FeedCardImage {
   transition: 0.5s ease;
   opacity: 0;

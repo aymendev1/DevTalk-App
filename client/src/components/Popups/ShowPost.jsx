@@ -5,7 +5,7 @@ import { RiHeart2Fill, RiSendPlaneFill } from "react-icons/ri";
 import { AiFillMessage } from "react-icons/ai";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import CommentCard from "../Cards/CommentCard";
-import { LikePost } from "../../api/PostRequest";
+import { likePost, commentPost } from "../../api/PostRequest";
 
 import "./popup.css";
 function ShowPost(props) {
@@ -14,7 +14,7 @@ function ShowPost(props) {
   const [comment, setComment] = React.useState("");
   const [isLiked, setLiked] = React.useState(data.likes.includes(userData._id));
   const [Likes, setLikes] = React.useState(data.likes.length);
-
+  console.log(isLiked);
   const onEmojiClick = (emojiObject, event) => {
     setComment(comment + emojiObject.emoji);
   };
@@ -22,11 +22,13 @@ function ShowPost(props) {
     isEmojieOpen ? setisEmojieOpen(false) : setisEmojieOpen(true);
   }
   function handleLikes() {
+    likePost(data._id, userData._id);
     setLiked((prev) => !prev);
-    LikePost(data._id, userData._id);
     isLiked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
   }
-
+  function handleComment() {
+    commentPost(data._id, userData._id, comment);
+  }
   return (
     <div className="ShowPostPopup">
       <div className="leftS_ShowPostPopup">
@@ -106,7 +108,7 @@ function ShowPost(props) {
               <MdOutlineEmojiEmotions />
             </button>
           </div>
-          <form action="">
+          <form onSubmit={handleComment}>
             <input
               type="text"
               name="comment"

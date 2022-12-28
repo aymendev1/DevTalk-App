@@ -5,19 +5,26 @@ import { FaEye } from "react-icons/fa";
 import Popup from "../Popups/popup";
 import ShowPost from "../Popups/ShowPost";
 import { getUser } from "../../api/userRequest";
+import { likePost } from "../../api/PostRequest";
 export default function FeedCard(props) {
   const data = props.data;
   const userData = props.userData;
   const [buttonTrigger, setButtonTrigger] = React.useState(false);
   const [PublisherData, setPublisherData] = React.useState();
-
+  const [isLiked, setLiked] = React.useState(data.likes.includes(userData._id));
+  const [Likes, setLikes] = React.useState(data.likes.length);
   function openPopUp() {
     buttonTrigger ? setButtonTrigger(false) : setButtonTrigger(true);
   }
-
+  console.log(isLiked);
   async function getPublisherData() {
     const res = await getUser(data.userID);
     setPublisherData(res.data);
+  }
+  function handleLikes() {
+    likePost(data._id, userData._id);
+    setLiked((prev) => !prev);
+    isLiked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
   }
   React.useEffect(() => {
     getPublisherData();
@@ -40,9 +47,19 @@ export default function FeedCard(props) {
         <div className="FeedStats">
           <div className="Like">
             <button className="btnLike">
-              <RiHeart2Fill />
+              {isLiked ? (
+                <RiHeart2Fill
+                  style={{ color: "#ff0000", cursor: "pointer" }}
+                  onClick={handleLikes}
+                />
+              ) : (
+                <RiHeart2Fill
+                  style={{ cursor: "pointer" }}
+                  onClick={handleLikes}
+                />
+              )}
             </button>
-            <span>{data.likes.length}</span>
+            <span>{Likes}</span>
           </div>
           <div className="Comment">
             <button className="btnComment">

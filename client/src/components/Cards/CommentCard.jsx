@@ -1,15 +1,32 @@
 import React from "react";
 import { RiHeart2Line } from "react-icons/ri";
 import "./Cards.css";
+import { getUser } from "../../api/userRequest";
 function CommentCard(props) {
   const comment = props.data;
-  return (
+  const [CommentPubData, setCommentData] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+  async function getPublisherData() {
+    setLoading(true);
+    const res = await getUser(comment.userID);
+    setCommentData({
+      ProfilePicture: res.data.profilePicture,
+      username: res.data.username,
+    });
+    setLoading(false);
+  }
+  React.useEffect(() => {
+    getPublisherData();
+  }, []);
+  return loading ? (
+    ""
+  ) : (
     <div className="CommentCard">
       {/* Publisher pic */}
       <div>
-        <img src={comment.ProfilePicture} alt="" />
+        <img src={CommentPubData.ProfilePicture} alt="" />
         <span>
-          <span>{comment.username}</span>
+          <span>{CommentPubData.username}</span>
           {comment.content}
         </span>
         <button>
