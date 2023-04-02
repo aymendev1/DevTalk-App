@@ -16,7 +16,6 @@ export default function FeedCard(props) {
   function openPopUp() {
     buttonTrigger ? setButtonTrigger(false) : setButtonTrigger(true);
   }
-  console.log(isLiked);
   async function getPublisherData() {
     const res = await getUser(data.userID);
     setPublisherData(res.data);

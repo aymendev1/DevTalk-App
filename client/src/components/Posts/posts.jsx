@@ -9,7 +9,6 @@ function Posts() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.authReducer.authData);
   const { posts, loading } = useSelector((state) => state.postReducer);
-  console.log(loading);
   const [buttonTrigger, setButtonTrigger] = React.useState(false);
   function openPopUp() {
     buttonTrigger ? setButtonTrigger(false) : setButtonTrigger(true);
